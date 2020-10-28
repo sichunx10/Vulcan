@@ -7,7 +7,7 @@ const int ms3Pin = 10;
 
 //for Full step, use 800 delay
 //for Half step, use 400 delay, and so on
-const int stepperDelay = 400;
+const int stepperDelay = 1600;
  
 void setup() {
   //setup the pins
@@ -19,7 +19,7 @@ void setup() {
 
   //change the microstepping
   digitalWrite(ms1Pin,LOW);
-  digitalWrite(ms2Pin,HIGH);
+  digitalWrite(ms2Pin,LOW);
   digitalWrite(ms3Pin,LOW);
 }
 
@@ -33,9 +33,9 @@ void simpleMove(int steps) {
 
 void loop() {
   digitalWrite(dirPin, HIGH);
-  simpleMove(800);
+  simpleMove(1600);
   delay(200);
   digitalWrite(dirPin, LOW);
-  simpleMove(800);
-  delay(200);
+  simpleMove(1600);
+  delay(1000);
 }
