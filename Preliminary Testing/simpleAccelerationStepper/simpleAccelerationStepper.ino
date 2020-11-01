@@ -1,9 +1,9 @@
 // defines pins numbers
 const int stepPin = 5; 
 const int dirPin = 4; 
-const int ms1Pin = 8;
+const int ms1Pin = 10;
 const int ms2Pin = 9;
-const int ms3Pin = 10;
+const int ms3Pin = 8;
  
 void setup() {
   //setup the pins

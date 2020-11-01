@@ -1,13 +1,16 @@
 // defines pins numbers
 const int stepPin = 5; 
 const int dirPin = 4; 
-const int ms1Pin = 8;
+const int ms1Pin = 10;
 const int ms2Pin = 9;
-const int ms3Pin = 10;
+const int ms3Pin = 8;
 
-//for Full step, use 800 delay
-//for Half step, use 400 delay, and so on
-const int stepperDelay = 1600;
+//for Full step, use 1600 delay
+//for Half step, use 800 delay, and so on
+const int stepperDelay = 400;
+unsigned long timer1;
+unsigned long timer2;
+unsigned long difference;
  
 void setup() {
   //setup the pins
@@ -19,15 +22,21 @@ void setup() {
 
   //change the microstepping
   digitalWrite(ms1Pin,LOW);
-  digitalWrite(ms2Pin,LOW);
+  digitalWrite(ms2Pin,HIGH);
   digitalWrite(ms3Pin,LOW);
+
+  Serial.begin(115200);
 }
 
 void simpleMove(int steps) {
   for (int i=0; i<steps; i++) {
+    timer1 = micros();
     digitalWrite(stepPin, HIGH);
     digitalWrite(stepPin, LOW);
     delayMicroseconds(stepperDelay);
+    timer2 = micros();
+    difference = timer2 - timer1;
+    Serial.println(difference);
   }
 }
 
