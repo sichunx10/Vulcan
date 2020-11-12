@@ -1,3 +1,5 @@
+//output 0 when there is a magnetic field detected
+
 const int hallPin = 2;
 
 void setup() {
