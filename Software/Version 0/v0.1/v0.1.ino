@@ -127,27 +127,6 @@ float negativeAcceleration(float waitTime) {
 
 
 void loop() {
-//  digitalWrite(dirPin,HIGH);
-//  //timer1 = micros();
-//  buttonStatus = digitalRead(buttonPin);
-//  if(buttonStatus == LOW){
-//    waitTime = positiveAcceleration(waitTime);
-//    roundedWaitTime = round(waitTime*1000000);
-//    digitalWrite(stepPin,HIGH);
-//    delayMicroseconds(roundedWaitTime);
-//    digitalWrite(stepPin, LOW);
-//    Serial.println(currentPos);
-//  } 
-//  else {
-//    waitTime = negativeAcceleration(waitTime);
-//    roundedWaitTime = round(waitTime*1000000);
-//    if (roundedWaitTime < 3000){
-//      digitalWrite(stepPin,HIGH);
-//      delayMicroseconds(roundedWaitTime);
-//      digitalWrite(stepPin, LOW);
-//      Serial.println(currentPos);
-//    }
-//  }
   //check if anything is sent to serial monitor
   if(Serial.available() > 0){
     int incoming = Serial.parseInt();
