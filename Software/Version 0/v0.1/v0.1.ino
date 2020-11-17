@@ -128,6 +128,7 @@ float negativeAcceleration(float waitTime) {
 
 void loop() {
   //check if anything is sent to serial monitor
+  //make a parser that uses atoi
   if(Serial.available() > 0){
     int incoming = Serial.parseInt();
     if (incoming != 0){
