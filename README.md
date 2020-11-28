@@ -1,2 +1,2 @@
 # Vulcan
-Code for the development of the Vulcan robotic arm
+Repository for the entire development of the Vulcan robotic arm
