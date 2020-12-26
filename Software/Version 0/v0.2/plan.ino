@@ -1,0 +1,57 @@
+define pins 
+//general pin
+
+//motor 1, 2, 3 pins
+
+void setup() {
+//set up general pins
+
+//set up motor 1,2,3 pins
+
+//start Serial monitor
+
+startHoming(1);
+startHoming(2);
+startHoming(3);
+
+}
+
+void startHoming(int motor){
+    //homing function for a motor
+}
+
+int motionPlanning(int currentposition, int targetposition){
+    //returns step of acceleration change
+}
+
+float positiveAcceleration(int motor, float previous waittime){
+    return newwaittime;
+}
+
+float negativeAcceleration(int motor, float previous waititme){
+    return newwaittime;
+}
+
+int parser(bytes of data){
+    // parses the text and gets 3 integer values of targetpositions
+    int targetposition[3] = [#,#,#];
+    motionPlanning() // for each motor
+}
+
+int nextTime(int motor){
+    //tells you when the next step for any given motor is
+}
+
+void loop(){
+    micros();
+    parser();
+    waittime1 = nextTime(1);
+    waittime2 = nextTime(2);
+    waittime3 = nextTime(3);
+
+    //find which one is the smallest
+    if(currentmotor = 1) {
+        waittime = waittime1;
+
+    }
+}

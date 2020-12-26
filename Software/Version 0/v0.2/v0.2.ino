@@ -6,22 +6,23 @@
  * You may credit me if you would like, but it is not required
  * 
  * Version 0.1
- * This is the first real iternation of the Vulcan code for a single 
- * stepper actuator. It first calibrates the start position with a 
- * hall effect sensor and impliments a smooth acceleration function
+ * This version updates the program structure from a delay() model to one where there is no delays in the main code
+ * The parser is also updated with an atio parser that is able to take 3 postions, one for each of the first 3 actuators
  */
 
-// defines pins numbers
-const int buttonPin = 12;
+// general defines pins numbers
+const int ledPin = 13;
+const int toMax = 1984;
+float waitTime = 0.003;
+
 const int stepPin = 5; 
 const int dirPin = 4; 
 const int ms1Pin = 10;
 const int ms2Pin = 9;
 const int ms3Pin = 8;
-const int ledPin = 13;
+
 const int hallPin = 3;
-const int toMax = 1984;
-float waitTime = 0.003;
+
 int buttonStatus;
 int roundedWaitTime;
 int hallStatus;
@@ -36,7 +37,6 @@ unsigned long difference;
  
 void setup() {
   //setup the pins
-  pinMode(buttonPin, INPUT_PULLUP);
   pinMode(stepPin,OUTPUT); 
   pinMode(dirPin,OUTPUT);
   pinMode(ms1Pin,OUTPUT);
@@ -149,6 +149,7 @@ void loop() {
       }
     }
   }
+
   //accelerate if the acceleration "bin" is not empty
   if(accelBin != 0){
     waitTime = positiveAcceleration(waitTime);
