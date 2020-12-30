@@ -6,8 +6,15 @@
  * You may credit me if you would like, but it is not required
  * 
  * Version 0.1
- * Success: Added parser that is able to take 3 serial inputs for motor locations (scalable) in a single line (ex. '10,20,40')
- * Failed: implement 'intelligent' delay()-based motor control for multiple actuators
+ * Success: 
+ * - Added parser that is able to take 3 serial inputs for motor locations (scalable) in a single line (ex. '10,20,40')
+ * - edited the variable initialization for 3 stepper motors, as well as other functions that depend on that.
+ * - 
+ * 
+ * Failed: implement 'intelligent' delay()-based motor control for multiple actuators. The fundamental approach fell apart because 
+ * there is a function that is should be able to output the next delay time for a specified motor based on the previous delay time. 
+ * However, the control is designed such that loop steps a stepper motor. Because of this, the delay time can get cut by the end of
+ * the loop. This messes up the delay function as it needs to take the entire previous delay value to function correctly.
  */
 
 // constants
