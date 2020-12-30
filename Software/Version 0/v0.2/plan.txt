@@ -8,6 +8,7 @@ void setup() {
 
 //set up motor 1,2,3 pins
 
+
 //start Serial monitor
 
 startHoming(1);
