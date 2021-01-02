@@ -5,7 +5,7 @@
  * License: This is open source, so do whatever you want with it. 
  * You may credit me if you would like, but it is not required
  * 
- * Version 0.1
+ * Version 0.2
  * Success: 
  * - Added parser that is able to take 3 serial inputs for motor locations (scalable) in a single line (ex. '10,20,40')
  * - edited the variable initialization for 3 stepper motors, as well as other functions that depend on that.
